@@ -5,7 +5,10 @@ const inputValue = ref("");
 </script>
 
 <template>
-  <div class="send-message-container">
+  <div
+    :class="inputValue.length ? 'active-message-container' : ''"
+    class="send-message-container"
+  >
     <!--    <button class="emoji-button">-->
     <!--      <svg-->
     <!--        width="16"-->
@@ -50,25 +53,32 @@ const inputValue = ref("");
 
 <style scoped>
 .message-input {
-  box-shadow: inset 0 1px 0 0 #dbdbdb;
-  background: #fff;
   outline: 0;
   border: 0;
-  padding: 14px 0;
-}
-.message-input::after {
-  width: 500px;
-  content: "sigma";
-}
-.btn {
-}
-.send-message-container {
-  display: flex;
-  justify-content: space-between;
-  box-shadow: inset 0 1px 0 0 #e5e5ea;
+  padding: 14px 10px;
+  background-color: inherit;
+  width: 100%;
 }
 
+.send-message-container {
+  margin: auto;
+  width: 70%;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #dbdbdb;
+}
+.send-btn {
+  outline: 0;
+  border: 0;
+  background-color: inherit;
+  cursor: pointer;
+}
 .active-send-btn svg path {
   fill: #007aff;
+}
+.active-message-container {
+  border: 2px solid #007aff;
+  z-index: 100;
 }
 </style>

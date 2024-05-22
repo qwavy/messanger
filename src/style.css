@@ -110,3 +110,7 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: #C0C0C0;
 }
+
+body{
+  overflow-x: hidden;
+}

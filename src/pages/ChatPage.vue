@@ -3,6 +3,8 @@ import { ref } from "vue";
 import Message from "../components/Message.vue";
 import Input from "../components/Input.vue";
 import ChatList from "./ChatList.vue";
+import Search from "../components/Search.vue";
+import BurgerMenu from "../components/BurgerMenu.vue";
 const data = ref([
   {
     userInfo: {
@@ -90,11 +92,21 @@ const messages = [
 
 <template>
   <div class="chat-page">
-    <div class="chat-list">
+    <div class="left-side">
+      <div class="left-side-header">
+        <BurgerMenu />
+        <Search />
+      </div>
       <ChatList />
     </div>
     <div class="current-chat">
       <div class="current-chat-header">
+        <button class="current-chat-leave-btn">
+          <img
+            src="../assets/icons/arrow-left.svg"
+            alt="leave from current chat button"
+          />
+        </button>
         <img :src="data[0].userInfo.avatar" class="user-avatar" alt="avatar" />
         <div class="user-info">
           <h3 class="user-name">{{ data[0].userInfo.name }}</h3>
@@ -132,25 +144,40 @@ const messages = [
 <style scoped>
 .chat-page {
   display: flex;
+  justify-content: center;
+  width: 100vw;
 }
-.chat-list {
+.left-side {
+  width: 30%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
+.left-side-header {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom: 2px solid #dbdbdb;
+  border-right: 2px solid #dbdbdb;
+}
 .current-chat {
+  width: 65%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-bottom: 30px;
 }
 .current-chat-header {
   display: flex;
-  gap: 20px;
+  gap: 0 20px;
   height: 100px;
   align-items: center;
   border-bottom: 2px solid #dbdbdb;
+  padding: 20px 30px;
 }
 .user-avatar {
   width: 48px;
@@ -185,23 +212,41 @@ const messages = [
   display: flex;
   flex-direction: column;
   width: 95%;
-  height: 600px;
   overflow-y: scroll;
   padding: 0 30px;
   gap: 20px 0;
 }
+
+.current-chat-leave-btn {
+  display: none;
+}
 @media (max-width: 1024px) {
-  .chat-list {
+  .current-chat {
+    width: 100%;
+  }
+  .left-side {
     display: none;
   }
   .messages-container {
     display: flex;
     flex-direction: column;
     width: 95vw;
-    height: 600px;
+    height: 60vh;
     overflow-y: scroll;
     padding: 0 30px;
     gap: 20px 0;
+  }
+  .send-message-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+  }
+  .message-input {
+    padding: 14px 15px;
+  }
+  .current-chat-leave-btn {
+    display: block;
   }
 }
 </style>

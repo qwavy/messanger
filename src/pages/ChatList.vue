@@ -47,6 +47,96 @@ const data = [
     chatName: "PandaFx",
     chatImg: "src/assets/images/logo.png",
   },
+  {
+    chatId: 11,
+    chatName: "PandaFx",
+    chatImg: "src/assets/images/logo.png",
+  },
+  {
+    chatId: 12,
+    chatName: "PandaFx",
+    chatImg: "src/assets/images/logo.png",
+  },
+  {
+    chatId: 13,
+    chatName: "PandaFx",
+    chatImg: "src/assets/images/logo.png",
+  },
+  {
+    chatId: 14,
+    chatName: "PandaFx",
+    chatImg: "src/assets/images/logo.png",
+  },
+  {
+    chatId: 15,
+    chatName: "PandaFx",
+    chatImg: "src/assets/images/logo.png",
+  },
+  {
+    chatId: 16,
+    chatName: "PandaFx",
+    chatImg: "src/assets/images/logo.png",
+  },
+  {
+    chatId: 17,
+    chatName: "PandaFx",
+    chatImg: "src/assets/images/logo.png",
+  },
+  {
+    chatId: 18,
+    chatName: "PandaFx",
+    chatImg: "src/assets/images/logo.png",
+  },
+  {
+    chatId: 19,
+    chatName: "PandaFx",
+    chatImg: "src/assets/images/logo.png",
+  },
+  {
+    chatId: 20,
+    chatName: "PandaFx",
+    chatImg: "src/assets/images/logo.png",
+  },
+  {
+    chatId: 22,
+    chatName: "PandaFx",
+    chatImg: "src/assets/images/logo.png",
+  },
+  {
+    chatId: 23,
+    chatName: "PandaFx",
+    chatImg: "src/assets/images/logo.png",
+  },
+  {
+    chatId: 24,
+    chatName: "PandaFx",
+    chatImg: "src/assets/images/logo.png",
+  },
+  {
+    chatId: 25,
+    chatName: "PandaFx",
+    chatImg: "src/assets/images/logo.png",
+  },
+  {
+    chatId: 26,
+    chatName: "PandaFx",
+    chatImg: "src/assets/images/logo.png",
+  },
+  {
+    chatId: 27,
+    chatName: "PandaFx",
+    chatImg: "src/assets/images/logo.png",
+  },
+  {
+    chatId: 28,
+    chatName: "PandaFx",
+    chatImg: "src/assets/images/logo.png",
+  },
+  {
+    chatId: 29,
+    chatName: "PandaFx",
+    chatImg: "src/assets/images/logo.png",
+  },
 ];
 </script>
 
@@ -63,6 +153,8 @@ const data = [
 
 <style scoped>
 .chat-list {
-  width: 50vw;
+  width: 30vw;
+  height: 100vh;
+  overflow-y: scroll;
 }
 </style>
