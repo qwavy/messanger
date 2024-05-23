@@ -1,6 +1,6 @@
 <script setup>
 import Message from "./components/Message.vue";
-import Input from "./components/Input.vue";
+import Input from "./components/CustomInput.vue";
 import AuthPage from "./pages/AuthPage.vue";
 import ChatPage from "./pages/ChatPage.vue";
 import ChatList from "./pages/ChatList.vue";
@@ -34,6 +34,14 @@ const messages = [
 </template>
 
 <style>
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/assets/fonts/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("/src/assets/fonts/Roboto-Bold.ttf");
+}
 body {
   font-family: Roboto;
 }

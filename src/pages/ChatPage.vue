@@ -1,10 +1,12 @@
 <script setup>
 import { ref } from "vue";
 import Message from "../components/Message.vue";
-import Input from "../components/Input.vue";
+import Input from "../components/CustomInput.vue";
 import ChatList from "./ChatList.vue";
 import Search from "../components/Search.vue";
 import BurgerMenu from "../components/BurgerMenu.vue";
+
+import { ScrollArea } from "@/components/ui/scroll-area/index.js";
 const data = ref([
   {
     userInfo: {
@@ -127,13 +129,15 @@ const messages = [
           >
         </div>
       </div>
-      <div class="messages-container">
-        <Message
-          v-for="message in messages"
-          :content="message.content"
-          :my-message="message.myMessage"
-        />
-      </div>
+      <ScrollArea>
+        <div class="messages-container">
+          <Message
+            v-for="message in messages"
+            :content="message.content"
+            :my-message="message.myMessage"
+          />
+        </div>
+      </ScrollArea>
       <div>
         <Input />
       </div>
@@ -212,7 +216,6 @@ const messages = [
   display: flex;
   flex-direction: column;
   width: 95%;
-  overflow-y: scroll;
   padding: 0 30px;
   gap: 20px 0;
 }

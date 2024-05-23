@@ -1,5 +1,6 @@
 <script setup>
 import ChatListItem from "../components/ChatListItem.vue";
+import { ScrollArea } from "@/components/ui/scroll-area/index.js";
 
 const data = [
   {
@@ -141,20 +142,21 @@ const data = [
 </script>
 
 <template>
-  <div class="chat-list">
-    <ChatListItem
-      v-for="item in data"
-      :chat-id="+item.chatId"
-      :chat-name="item.chatName"
-      :chat-img="item.chatImg"
-    />
-  </div>
+  <ScrollArea>
+    <div class="chat-list">
+      <ChatListItem
+        v-for="item in data"
+        :chat-id="+item.chatId"
+        :chat-name="item.chatName"
+        :chat-img="item.chatImg"
+      />
+    </div>
+  </ScrollArea>
 </template>
 
 <style scoped>
 .chat-list {
   width: 30vw;
   height: 100vh;
-  overflow-y: scroll;
 }
 </style>
