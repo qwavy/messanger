@@ -1,4 +1,5 @@
 <script setup>
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 const props = defineProps({
   chatId: Boolean,
   chatName: String,
@@ -8,7 +9,10 @@ const props = defineProps({
 
 <template>
   <div class="chat-list-item">
-    <img :src="chatImg" class="chat-item-img" alt="" />
+    <Avatar>
+      <AvatarImage :src="chatImg" alt="@radix-vue" />
+      <AvatarFallback>CN</AvatarFallback>
+    </Avatar>
     <h3 class="chat-item-name">{{ chatName }}</h3>
   </div>
 </template>

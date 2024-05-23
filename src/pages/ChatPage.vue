@@ -165,7 +165,7 @@ const messages = [
 }
 .current-chat {
   width: 65%;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
