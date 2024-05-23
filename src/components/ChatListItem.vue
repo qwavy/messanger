@@ -1,20 +1,45 @@
 <script setup>
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  ContextMenu,
+  ContextMenuCheckboxItem,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuLabel,
+  ContextMenuRadioGroup,
+  ContextMenuRadioItem,
+  ContextMenuSeparator,
+  ContextMenuShortcut,
+  ContextMenuSub,
+  ContextMenuSubContent,
+  ContextMenuSubTrigger,
+  ContextMenuTrigger,
+} from "@/components/ui/context-menu";
 const props = defineProps({
-  chatId: Boolean,
+  chatId: Number,
   chatName: String,
   chatImg: String,
 });
 </script>
 
 <template>
-  <div class="chat-list-item">
-    <Avatar>
-      <AvatarImage :src="chatImg" alt="@radix-vue" />
-      <AvatarFallback>CN</AvatarFallback>
-    </Avatar>
-    <h3 class="chat-item-name">{{ chatName }}</h3>
-  </div>
+  <ContextMenu>
+    <ContextMenuTrigger>
+      <div class="chat-list-item">
+        <Avatar>
+          <AvatarImage :src="chatImg" alt="@radix-vue" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+        <h3 class="chat-item-name">{{ chatName }}</h3>
+      </div>
+    </ContextMenuTrigger>
+    <ContextMenuContent>
+      <ContextMenuItem>Profile {{ chatId }}</ContextMenuItem>
+      <ContextMenuItem>Billing</ContextMenuItem>
+      <ContextMenuItem>Team</ContextMenuItem>
+      <ContextMenuItem>Subscription</ContextMenuItem>
+    </ContextMenuContent>
+  </ContextMenu>
 </template>
 
 <style scoped>

@@ -184,7 +184,6 @@ const messages = [
 .left-side-header {
   height: 100px;
   display: flex;
-  justify-content: space-around;
   align-items: center;
   width: 100%;
   border-bottom: 2px solid #dbdbdb;
