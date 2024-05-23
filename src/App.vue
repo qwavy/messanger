@@ -30,10 +30,14 @@ const messages = [
 </script>
 
 <template>
+  <!--  <AuthPage />-->
   <ChatPage />
 </template>
 
 <style>
+:root {
+  --main-purple: #615ef0;
+}
 @font-face {
   font-family: "Roboto";
   src: url("/src/assets/fonts/Roboto-Regular.ttf");
@@ -44,7 +48,9 @@ const messages = [
 }
 body {
   font-family: Roboto;
+  padding: 0px 20px;
 }
+
 * {
   padding: 0;
   margin: 0;

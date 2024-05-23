@@ -6,6 +6,12 @@ import ChatList from "./ChatList.vue";
 import Search from "../components/Search.vue";
 import BurgerMenu from "../components/BurgerMenu.vue";
 
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable";
+
 import { ScrollArea } from "@/components/ui/scroll-area/index.js";
 const data = ref([
   {
@@ -93,55 +99,66 @@ const messages = [
 </script>
 
 <template>
-  <div class="chat-page">
-    <div class="left-side">
-      <div class="left-side-header">
-        <BurgerMenu />
-        <Search />
-      </div>
-      <ChatList />
-    </div>
-    <div class="current-chat">
-      <div class="current-chat-header">
-        <button class="current-chat-leave-btn">
-          <img
-            src="../assets/icons/arrow-left.svg"
-            alt="leave from current chat button"
-          />
-        </button>
-        <img :src="data[0].userInfo.avatar" class="user-avatar" alt="avatar" />
-        <div class="user-info">
-          <h3 class="user-name">{{ data[0].userInfo.name }}</h3>
-          <span
-            v-if="data[0].userInfo.status === 'Online'"
-            class="user-status user-status-online"
-            >{{ data[0].userInfo.status }}</span
-          >
-          <span
-            v-else-if="data[0].userInfo.status === 'Busy'"
-            class="user-status user-status-busy"
-            >{{ data[0].userInfo.status }}</span
-          >
-          <span
-            v-else-if="data[0].userInfo.status === 'Offline'"
-            class="user-status user-status-offline"
-            >{{ data[0].userInfo.status }}</span
-          >
+  <div>
+    <ResizablePanelGroup direction="horizontal">
+      <ResizablePanel id="left-side-panel">
+        <div class="left-side">
+          <div class="left-side-header">
+            <BurgerMenu />
+            <Search />
+          </div>
+          <ChatList />
         </div>
-      </div>
-      <ScrollArea>
-        <div class="messages-container">
-          <Message
-            v-for="message in messages"
-            :content="message.content"
-            :my-message="message.myMessage"
-          />
+      </ResizablePanel>
+      <ResizableHandle />
+      <ResizablePanel id="right-side-panel">
+        <div class="current-chat">
+          <div class="current-chat-header">
+            <button class="current-chat-leave-btn">
+              <img
+                src="../assets/icons/arrow-left.svg"
+                alt="leave from current chat button"
+              />
+            </button>
+            <img
+              :src="data[0].userInfo.avatar"
+              class="user-avatar"
+              alt="avatar"
+            />
+            <div class="user-info">
+              <h3 class="user-name">{{ data[0].userInfo.name }}</h3>
+              <span
+                v-if="data[0].userInfo.status === 'Online'"
+                class="user-status user-status-online"
+                >{{ data[0].userInfo.status }}</span
+              >
+              <span
+                v-else-if="data[0].userInfo.status === 'Busy'"
+                class="user-status user-status-busy"
+                >{{ data[0].userInfo.status }}</span
+              >
+              <span
+                v-else-if="data[0].userInfo.status === 'Offline'"
+                class="user-status user-status-offline"
+                >{{ data[0].userInfo.status }}</span
+              >
+            </div>
+          </div>
+          <ScrollArea>
+            <div class="messages-container">
+              <Message
+                v-for="message in messages"
+                :content="message.content"
+                :my-message="message.myMessage"
+              />
+            </div>
+          </ScrollArea>
+          <div>
+            <Input />
+          </div>
         </div>
-      </ScrollArea>
-      <div>
-        <Input />
-      </div>
-    </div>
+      </ResizablePanel>
+    </ResizablePanelGroup>
   </div>
 </template>
 
@@ -151,29 +168,35 @@ const messages = [
   justify-content: center;
   width: 100vw;
 }
+#left-side-panel {
+  min-width: 15%;
+  max-width: 35%;
+}
+#right-side-panel {
+  max-width: 80%;
+}
 .left-side {
-  width: 30%;
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
 }
 .left-side-header {
   height: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   border-bottom: 2px solid #dbdbdb;
   border-right: 2px solid #dbdbdb;
 }
 .current-chat {
-  width: 65%;
   height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 30px;
+  width: 100%;
 }
 .current-chat-header {
   display: flex;

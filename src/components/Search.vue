@@ -1,7 +1,9 @@
-<script setup></script>
+<script setup>
+import { Input } from "@/components/ui/input";
+</script>
 
 <template>
-  <input class="search-input" placeholder="Search" />
+  <Input class="search-input" placeholder="Search" />
 </template>
 
 <style scoped>
@@ -13,6 +15,7 @@
   border-radius: 12px;
   background-image: url("src/assets/icons/search.svg");
   background-repeat: no-repeat;
-  background-position: 5%;
+  background-position: 4%;
+  width: 50%;
 }
 </style>

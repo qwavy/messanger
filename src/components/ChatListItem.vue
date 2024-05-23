@@ -23,6 +23,7 @@ const props = defineProps({
   height: 72px;
   display: flex;
   align-items: center;
+  gap: 30px;
 }
 .chat-item-img {
   width: 54px;

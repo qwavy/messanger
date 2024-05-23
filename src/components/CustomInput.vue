@@ -16,6 +16,7 @@ const inputValue = ref("");
       placeholder="Start typing..."
     />
     <Button
+      @click="sendMessage"
       :class="inputValue.length ? 'active-send-btn' : ''"
       class="send-btn"
     >
