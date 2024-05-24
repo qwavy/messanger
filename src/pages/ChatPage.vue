@@ -186,6 +186,7 @@ const messages = [
   height: 100px;
   display: flex;
   align-items: center;
+  gap: 30px;
   width: 100%;
   border-bottom: 2px solid #dbdbdb;
   border-right: 2px solid #dbdbdb;
