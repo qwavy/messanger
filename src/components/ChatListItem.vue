@@ -34,7 +34,7 @@ const props = defineProps({
       </div>
     </ContextMenuTrigger>
     <ContextMenuContent>
-      <ContextMenuItem>Profile {{ chatId }}</ContextMenuItem>
+      <ContextMenuItem>Profile</ContextMenuItem>
       <ContextMenuItem>Billing</ContextMenuItem>
       <ContextMenuItem>Team</ContextMenuItem>
       <ContextMenuItem>Subscription</ContextMenuItem>

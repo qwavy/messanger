@@ -169,10 +169,11 @@ const messages = [
   width: 100vw;
 }
 #left-side-panel {
-  min-width: 15%;
+  min-width: 20%;
   max-width: 35%;
 }
 #right-side-panel {
+  min-width: 65%;
   max-width: 80%;
 }
 .left-side {
@@ -246,6 +247,14 @@ const messages = [
   display: none;
 }
 @media (max-width: 1024px) {
+  #left-side-panel {
+    display: none;
+  }
+  #right-side-panel {
+    max-width: 100%;
+    width: 100%;
+    margin: auto;
+  }
   .current-chat {
     width: 100%;
   }
