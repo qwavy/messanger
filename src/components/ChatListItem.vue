@@ -27,20 +27,27 @@ const props = defineProps({
 });
 
 const mutedData = ref(props.muted);
-
-const readedClass = ref(props.readed ? "" : "message-info");
 const mutedClass = ref(mutedData.value ? "unreaded-message" : "muted-message");
+
+const readedData = ref(props.readed);
+const readedClass = ref(readedData.value ? "" : "message-info");
 
 const showMutedIcon = ref(mutedData.value ? "none" : "inline-block");
 
 watch(mutedData, () => {
-  if (showMutedIcon.value == "inline-block") {
+  if (showMutedIcon.value === "inline-block") {
     showMutedIcon.value = "none";
     mutedClass.value = "unreaded-message";
   } else {
     mutedClass.value = "muted-message";
     showMutedIcon.value = "inline-block";
   }
+});
+watch(readedData, () => {
+  if (readedClass.value === "message-info") {
+    return (readedClass.value = "");
+  }
+  return (readedClass.value = "message-info");
 });
 </script>
 
@@ -84,7 +91,11 @@ watch(mutedData, () => {
         </span>
       </ContextMenuItem>
       <ContextMenuItem>
-        <span v-if="props.readed" class="menu-item">
+        <span
+          v-if="readedData"
+          class="menu-item"
+          @click="readedData = !readedData"
+        >
           <img
             src="/src/assets/icons/mark-as-unreaded.svg"
             alt=""
@@ -92,7 +103,7 @@ watch(mutedData, () => {
           />
           Mark as unreaded
         </span>
-        <span v-else class="menu-item">
+        <span v-else class="menu-item" @click="readedData = !readedData">
           <img src="/src/assets/icons/mark-as-readed.svg" alt="" class="icon" />
           Mark as readed
         </span>
