@@ -15,7 +15,7 @@ import {
   ContextMenuSubTrigger,
   ContextMenuTrigger,
 } from "@/components/ui/context-menu";
-import { ref } from "vue";
+import { ref, watch } from "vue";
 
 const props = defineProps({
   chatId: Number,
@@ -25,10 +25,23 @@ const props = defineProps({
   readed: Boolean,
   muted: Boolean,
 });
-const readedClass = ref(props.readed ? "" : "message-info");
-const mutedClass = ref(props.muted ? "unreaded-message" : "muted-message");
 
-const showMutedIcon = ref(props.muted ? "none" : "inline-block");
+const mutedData = ref(props.muted);
+
+const readedClass = ref(props.readed ? "" : "message-info");
+const mutedClass = ref(mutedData.value ? "unreaded-message" : "muted-message");
+
+const showMutedIcon = ref(mutedData.value ? "none" : "inline-block");
+
+watch(mutedData, () => {
+  if (showMutedIcon.value == "inline-block") {
+    showMutedIcon.value = "none";
+    mutedClass.value = "unreaded-message";
+  } else {
+    mutedClass.value = "muted-message";
+    showMutedIcon.value = "inline-block";
+  }
+});
 </script>
 
 <template>
@@ -56,8 +69,34 @@ const showMutedIcon = ref(props.muted ? "none" : "inline-block");
           Profile
         </span>
       </ContextMenuItem>
-      <ContextMenuItem>Billing</ContextMenuItem>
-      <ContextMenuItem>Team</ContextMenuItem>
+      <ContextMenuItem>
+        <span
+          v-if="mutedData"
+          class="menu-item"
+          @click="mutedData = !mutedData"
+        >
+          <img src="/src/assets/icons/muted.svg" alt="" class="icon" />
+          Mute
+        </span>
+        <span v-else class="menu-item" @click="mutedData = !mutedData">
+          <img src="/src/assets/icons/unmute.svg" alt="" class="icon" />
+          Unmute
+        </span>
+      </ContextMenuItem>
+      <ContextMenuItem>
+        <span v-if="props.readed" class="menu-item">
+          <img
+            src="/src/assets/icons/mark-as-unreaded.svg"
+            alt=""
+            class="icon"
+          />
+          Mark as unreaded
+        </span>
+        <span v-else class="menu-item">
+          <img src="/src/assets/icons/mark-as-readed.svg" alt="" class="icon" />
+          Mark as readed
+        </span>
+      </ContextMenuItem>
       <ContextMenuItem
         ><span class="menu-item delete-chat">
           <img

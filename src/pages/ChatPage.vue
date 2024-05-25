@@ -114,34 +114,37 @@ const messages = [
       <ResizablePanel id="right-side-panel">
         <div class="current-chat">
           <div class="current-chat-header">
-            <button class="current-chat-leave-btn">
+            <div class="current-chat-info">
               <img
-                src="../assets/icons/arrow-left.svg"
-                alt="leave from current chat button"
+                :src="data[0].userInfo.avatar"
+                class="user-avatar"
+                alt="avatar"
               />
-            </button>
-            <img
-              :src="data[0].userInfo.avatar"
-              class="user-avatar"
-              alt="avatar"
-            />
-            <div class="user-info">
-              <h3 class="user-name">{{ data[0].userInfo.name }}</h3>
-              <span
-                v-if="data[0].userInfo.status === 'Online'"
-                class="user-status user-status-online"
-                >{{ data[0].userInfo.status }}</span
-              >
-              <span
-                v-else-if="data[0].userInfo.status === 'Busy'"
-                class="user-status user-status-busy"
-                >{{ data[0].userInfo.status }}</span
-              >
-              <span
-                v-else-if="data[0].userInfo.status === 'Offline'"
-                class="user-status user-status-offline"
-                >{{ data[0].userInfo.status }}</span
-              >
+              <button class="current-chat-leave-btn">
+                <img
+                  src="../assets/icons/arrow-left.svg"
+                  alt="leave from current chat button"
+                />
+              </button>
+              <div class="user-info">
+                <h3 class="user-name">{{ data[0].userInfo.name }}</h3>
+                <span
+                  v-if="data[0].userInfo.status === 'Online'"
+                  class="user-status user-status-online"
+                  >{{ data[0].userInfo.status }}</span
+                >
+                <span
+                  v-else-if="data[0].userInfo.status === 'Busy'"
+                  class="user-status user-status-busy"
+                  >{{ data[0].userInfo.status }}</span
+                >
+                <span
+                  v-else-if="data[0].userInfo.status === 'Offline'"
+                  class="user-status user-status-offline"
+                  >{{ data[0].userInfo.status }}</span
+                >
+              </div>
+              <div class="current-chat-actions"></div>
             </div>
           </div>
           <ScrollArea>
@@ -201,11 +204,14 @@ const messages = [
 }
 .current-chat-header {
   display: flex;
+  border-bottom: 2px solid #dbdbdb;
+  padding: 20px 30px;
+}
+.current-chat-info {
+  display: flex;
   gap: 0 20px;
   height: 100px;
   align-items: center;
-  border-bottom: 2px solid #dbdbdb;
-  padding: 20px 30px;
 }
 .user-avatar {
   width: 48px;
