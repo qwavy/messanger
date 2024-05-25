@@ -31,7 +31,12 @@ const messages = [
 
 <template>
   <!--  <AuthPage />-->
-  <ChatPage />
+  <!--  <ChatPage />-->
+  <h1>Hello {{ $route.fullPath }}</h1>
+  <RouterLink to="/chat/1">asd</RouterLink>
+  <main>
+    <RouterView />
+  </main>
 </template>
 
 <style>
@@ -81,5 +86,10 @@ body {
 
 body {
   overflow-x: hidden;
+}
+@media (max-width: 1024px) {
+  body {
+    padding: 0;
+  }
 }
 </style>

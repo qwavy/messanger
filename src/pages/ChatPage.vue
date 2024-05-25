@@ -1,11 +1,10 @@
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import Message from "../components/Message.vue";
 import Input from "../components/CustomInput.vue";
 import ChatList from "./ChatList.vue";
 import Search from "../components/Search.vue";
 import BurgerMenu from "../components/BurgerMenu.vue";
-
 import {
   ResizableHandle,
   ResizablePanel,
@@ -13,93 +12,25 @@ import {
 } from "@/components/ui/resizable";
 
 import { ScrollArea } from "@/components/ui/scroll-area/index.js";
-const data = ref([
-  {
-    userInfo: {
-      avatar: "src/assets/icons/user-avatar.svg",
-      name: "Nursultan",
-      status: "Offline",
-    },
-  },
-]);
-const messages = [
-  {
-    content: "Hello",
-    myMessage: false,
-  },
-  {
-    content: "Hello",
-    myMessage: true,
-  },
-  {
-    content: "How are you today?",
-    myMessage: false,
-  },
-  {
-    content: "iam fine thank you and you?",
-    myMessage: true,
-  },
-  {
-    content: "m2",
-    myMessage: false,
-  },
-  {
-    content: "thats good . What you want to do in your birthday?",
-    myMessage: true,
-  },
-  {
-    content: "I want watch football and i want win of my team",
-    myMessage: false,
-  },
-  {
-    content: "real madrid today is worst",
-    myMessage: true,
-  },
-  {
-    content: "yes i know",
-    myMessage: false,
-  },
-  {
-    content: "Hello",
-    myMessage: false,
-  },
-  {
-    content: "Hello",
-    myMessage: true,
-  },
-  {
-    content: "How are you today?",
-    myMessage: false,
-  },
-  {
-    content: "iam fine thank you and you?",
-    myMessage: true,
-  },
-  {
-    content: "m2",
-    myMessage: false,
-  },
-  {
-    content: "thats good . What you want to do in your birthday?",
-    myMessage: true,
-  },
-  {
-    content: "I want watch football and i want win of my team",
-    myMessage: false,
-  },
-  {
-    content: "real madrid today is worst",
-    myMessage: true,
-  },
-  {
-    content: "yes i know",
-    myMessage: false,
-  },
-];
+import { useRoute } from "vue-router";
+
+import { getData } from "@/api/api.js";
+
+const route = useRoute();
+
+const messages = ref([]);
+const user = ref();
+const index = +route.params.id[0];
+onMounted(async () => {
+  user.value = await getData("/data/users.json");
+  user.value = user.value[index];
+  console.log(user.value.chats);
+  messages.value = await getData("/data/messages.json");
+});
 </script>
 
 <template>
-  <div>
+  <div v-if="user">
     <ResizablePanelGroup direction="horizontal">
       <ResizablePanel id="left-side-panel">
         <div class="left-side">
@@ -107,7 +38,7 @@ const messages = [
             <BurgerMenu />
             <Search />
           </div>
-          <ChatList />
+          <ChatList :chat-list-data="user.chats" />
         </div>
       </ResizablePanel>
       <ResizableHandle />
@@ -116,7 +47,7 @@ const messages = [
           <div class="current-chat-header">
             <div class="current-chat-info">
               <img
-                :src="data[0].userInfo.avatar"
+                :src="user.userInfo.avatar"
                 class="user-avatar"
                 alt="avatar"
               />
@@ -127,21 +58,21 @@ const messages = [
                 />
               </button>
               <div class="user-info">
-                <h3 class="user-name">{{ data[0].userInfo.name }}</h3>
+                <h3 class="user-name">{{ user.userInfo.name }}</h3>
                 <span
-                  v-if="data[0].userInfo.status === 'Online'"
+                  v-if="user.userInfo.status === 'Online'"
                   class="user-status user-status-online"
-                  >{{ data[0].userInfo.status }}</span
+                  >{{ user.userInfo.status }}</span
                 >
                 <span
-                  v-else-if="data[0].userInfo.status === 'Busy'"
+                  v-else-if="user.userInfo.status === 'Busy'"
                   class="user-status user-status-busy"
-                  >{{ data[0].userInfo.status }}</span
+                  >{{ user.userInfo.status }}</span
                 >
                 <span
-                  v-else-if="data[0].userInfo.status === 'Offline'"
+                  v-else-if="user.userInfo.status === 'Offline'"
                   class="user-status user-status-offline"
-                  >{{ data[0].userInfo.status }}</span
+                  >{{ user.userInfo.status }}</span
                 >
               </div>
               <div class="current-chat-actions"></div>

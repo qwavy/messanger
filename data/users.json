@@ -1,0 +1,860 @@
+[
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Alex",
+      "status": "Online"
+    },
+    "chats": [
+      {
+        "chatId": 1,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Charlie",
+        "lastMessage": "Stay safe!",
+        "readed": true,
+        "muted": false
+      },
+      {
+        "chatId": 2,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Mona",
+        "lastMessage": "Long time no see!",
+        "readed": false,
+        "muted": false
+      },
+      {
+        "chatId": 3,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Eve",
+        "lastMessage": "Have you heard the news?",
+        "readed": true,
+        "muted": true
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Brianna",
+      "status": "Offline"
+    },
+    "chats": [
+      {
+        "chatId": 4,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Sam",
+        "lastMessage": "How are you?",
+        "readed": true,
+        "muted": false
+      },
+      {
+        "chatId": 5,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Hank",
+        "lastMessage": "Nice to meet you!",
+        "readed": false,
+        "muted": true
+      },
+      {
+        "chatId": 6,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Alice",
+        "lastMessage": "Talk to you later!",
+        "readed": true,
+        "muted": true
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Caleb",
+      "status": "Busy"
+    },
+    "chats": [
+      {
+        "chatId": 7,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Nina",
+        "lastMessage": "Good night!",
+        "readed": false,
+        "muted": true
+      },
+      {
+        "chatId": 8,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Tina",
+        "lastMessage": "Good night!",
+        "readed": false,
+        "muted": false
+      },
+      {
+        "chatId": 9,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "David",
+        "lastMessage": "See you soon!",
+        "readed": true,
+        "muted": false
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Diana",
+      "status": "Away"
+    },
+    "chats": [
+      {
+        "chatId": 10,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Oscar",
+        "lastMessage": "Goodbye!",
+        "readed": true,
+        "muted": true
+      },
+      {
+        "chatId": 11,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Paul",
+        "lastMessage": "Long time no see!",
+        "readed": true,
+        "muted": true
+      },
+      {
+        "chatId": 12,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Quincy",
+        "lastMessage": "Have a great day!",
+        "readed": true,
+        "muted": false
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Ethan",
+      "status": "Offline"
+    },
+    "chats": [
+      {
+        "chatId": 13,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Mona",
+        "lastMessage": "Take care!",
+        "readed": false,
+        "muted": false
+      },
+      {
+        "chatId": 14,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Leo",
+        "lastMessage": "What's up?",
+        "readed": false,
+        "muted": false
+      },
+      {
+        "chatId": 15,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Frank",
+        "lastMessage": "Congratulations!",
+        "readed": true,
+        "muted": true
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Fiona",
+      "status": "Online"
+    },
+    "chats": [
+      {
+        "chatId": 16,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Grace",
+        "lastMessage": "Talk to you later!",
+        "readed": false,
+        "muted": true
+      },
+      {
+        "chatId": 17,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Sam",
+        "lastMessage": "Nice to meet you!",
+        "readed": false,
+        "muted": false
+      },
+      {
+        "chatId": 18,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Jack",
+        "lastMessage": "Nice to meet you!",
+        "readed": false,
+        "muted": true
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "George",
+      "status": "Online"
+    },
+    "chats": [
+      {
+        "chatId": 19,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Leo",
+        "lastMessage": "Let's catch up!",
+        "readed": true,
+        "muted": false
+      },
+      {
+        "chatId": 20,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Rose",
+        "lastMessage": "Good morning!",
+        "readed": false,
+        "muted": true
+      },
+      {
+        "chatId": 21,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Tina",
+        "lastMessage": "Talk to you later!",
+        "readed": false,
+        "muted": false
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Hannah",
+      "status": "Offline"
+    },
+    "chats": [
+      {
+        "chatId": 22,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Oscar",
+        "lastMessage": "Good night!",
+        "readed": true,
+        "muted": false
+      },
+      {
+        "chatId": 23,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Kathy",
+        "lastMessage": "Nice to meet you!",
+        "readed": true,
+        "muted": false
+      },
+      {
+        "chatId": 24,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Grace",
+        "lastMessage": "What's new?",
+        "readed": true,
+        "muted": false
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Isaac",
+      "status": "Busy"
+    },
+    "chats": [
+      {
+        "chatId": 25,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Alice",
+        "lastMessage": "Nice to meet you!",
+        "readed": false,
+        "muted": false
+      },
+      {
+        "chatId": 26,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Hank",
+        "lastMessage": "Good morning!",
+        "readed": true,
+        "muted": false
+      },
+      {
+        "chatId": 27,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Paul",
+        "lastMessage": "Take care!",
+        "readed": true,
+        "muted": false
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Jasmine",
+      "status": "Online"
+    },
+    "chats": [
+      {
+        "chatId": 28,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Charlie",
+        "lastMessage": "Stay safe!",
+        "readed": true,
+        "muted": false
+      },
+      {
+        "chatId": 29,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Mona",
+        "lastMessage": "Long time no see!",
+        "readed": false,
+        "muted": false
+      },
+      {
+        "chatId": 30,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Eve",
+        "lastMessage": "Have you heard the news?",
+        "readed": true,
+        "muted": true
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Kevin",
+      "status": "Offline"
+    },
+    "chats": [
+      {
+        "chatId": 31,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Sam",
+        "lastMessage": "How are you?",
+        "readed": true,
+        "muted": false
+      },
+      {
+        "chatId": 32,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Hank",
+        "lastMessage": "Nice to meet you!",
+        "readed": false,
+        "muted": true
+      },
+      {
+        "chatId": 33,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Alice",
+        "lastMessage": "Talk to you later!",
+        "readed": true,
+        "muted": true
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Lily",
+      "status": "Away"
+    },
+    "chats": [
+      {
+        "chatId": 34,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Nina",
+        "lastMessage": "Good night!",
+        "readed": false,
+        "muted": true
+      },
+      {
+        "chatId": 35,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Tina",
+        "lastMessage": "Good night!",
+        "readed": false,
+        "muted": false
+      },
+      {
+        "chatId": 36,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "David",
+        "lastMessage": "See you soon!",
+        "readed": true,
+        "muted": false
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Max",
+      "status": "Online"
+    },
+    "chats": [
+      {
+        "chatId": 37,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Oscar",
+        "lastMessage": "Goodbye!",
+        "readed": true,
+        "muted": true
+      },
+      {
+        "chatId": 38,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Paul",
+        "lastMessage": "Long time no see!",
+        "readed": true,
+        "muted": true
+      },
+      {
+        "chatId": 39,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Quincy",
+        "lastMessage": "Have a great day!",
+        "readed": true,
+        "muted": false
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Nina",
+      "status": "Busy"
+    },
+    "chats": [
+      {
+        "chatId": 40,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Mona",
+        "lastMessage": "Take care!",
+        "readed": false,
+        "muted": false
+      },
+      {
+        "chatId": 41,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Leo",
+        "lastMessage": "What's up?",
+        "readed": false,
+        "muted": false
+      },
+      {
+        "chatId": 42,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Frank",
+        "lastMessage": "Congratulations!",
+        "readed": true,
+        "muted": true
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Oliver",
+      "status": "Offline"
+    },
+    "chats": [
+      {
+        "chatId": 43,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Grace",
+        "lastMessage": "Talk to you later!",
+        "readed": false,
+        "muted": true
+      },
+      {
+        "chatId": 44,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Sam",
+        "lastMessage": "Nice to meet you!",
+        "readed": false,
+        "muted": false
+      },
+      {
+        "chatId": 45,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Jack",
+        "lastMessage": "Nice to meet you!",
+        "readed": false,
+        "muted": true
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Paula",
+      "status": "Away"
+    },
+    "chats": [
+      {
+        "chatId": 46,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Leo",
+        "lastMessage": "Let's catch up!",
+        "readed": true,
+        "muted": false
+      },
+      {
+        "chatId": 47,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Rose",
+        "lastMessage": "Good morning!",
+        "readed": false,
+        "muted": true
+      },
+      {
+        "chatId": 48,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Tina",
+        "lastMessage": "Talk to you later!",
+        "readed": false,
+        "muted": false
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Quincy",
+      "status": "Online"
+    },
+    "chats": [
+      {
+        "chatId": 49,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Oscar",
+        "lastMessage": "Good night!",
+        "readed": true,
+        "muted": false
+      },
+      {
+        "chatId": 50,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Kathy",
+        "lastMessage": "Nice to meet you!",
+        "readed": true,
+        "muted": false
+      },
+      {
+        "chatId": 51,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Grace",
+        "lastMessage": "What's new?",
+        "readed": true,
+        "muted": false
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Rebecca",
+      "status": "Busy"
+    },
+    "chats": [
+      {
+        "chatId": 52,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Alice",
+        "lastMessage": "Nice to meet you!",
+        "readed": false,
+        "muted": false
+      },
+      {
+        "chatId": 53,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Hank",
+        "lastMessage": "Good morning!",
+        "readed": true,
+        "muted": false
+      },
+      {
+        "chatId": 54,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Paul",
+        "lastMessage": "Take care!",
+        "readed": true,
+        "muted": false
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Sophia",
+      "status": "Offline"
+    },
+    "chats": [
+      {
+        "chatId": 55,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Charlie",
+        "lastMessage": "Stay safe!",
+        "readed": true,
+        "muted": false
+      },
+      {
+        "chatId": 56,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Mona",
+        "lastMessage": "Long time no see!",
+        "readed": false,
+        "muted": false
+      },
+      {
+        "chatId": 57,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Eve",
+        "lastMessage": "Have you heard the news?",
+        "readed": true,
+        "muted": true
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Thomas",
+      "status": "Away"
+    },
+    "chats": [
+      {
+        "chatId": 58,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Sam",
+        "lastMessage": "How are you?",
+        "readed": true,
+        "muted": false
+      },
+      {
+        "chatId": 59,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Hank",
+        "lastMessage": "Nice to meet you!",
+        "readed": false,
+        "muted": true
+      },
+      {
+        "chatId": 60,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Alice",
+        "lastMessage": "Talk to you later!",
+        "readed": true,
+        "muted": true
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Uma",
+      "status": "Online"
+    },
+    "chats": [
+      {
+        "chatId": 61,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Nina",
+        "lastMessage": "Good night!",
+        "readed": false,
+        "muted": true
+      },
+      {
+        "chatId": 62,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Tina",
+        "lastMessage": "Good night!",
+        "readed": false,
+        "muted": false
+      },
+      {
+        "chatId": 63,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "David",
+        "lastMessage": "See you soon!",
+        "readed": true,
+        "muted": false
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Victor",
+      "status": "Offline"
+    },
+    "chats": [
+      {
+        "chatId": 64,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Oscar",
+        "lastMessage": "Goodbye!",
+        "readed": true,
+        "muted": true
+      },
+      {
+        "chatId": 65,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Paul",
+        "lastMessage": "Long time no see!",
+        "readed": true,
+        "muted": true
+      },
+      {
+        "chatId": 66,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Quincy",
+        "lastMessage": "Have a great day!",
+        "readed": true,
+        "muted": false
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Willow",
+      "status": "Busy"
+    },
+    "chats": [
+      {
+        "chatId": 67,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Mona",
+        "lastMessage": "Take care!",
+        "readed": false,
+        "muted": false
+      },
+      {
+        "chatId": 68,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Leo",
+        "lastMessage": "What's up?",
+        "readed": false,
+        "muted": false
+      },
+      {
+        "chatId": 69,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Frank",
+        "lastMessage": "Congratulations!",
+        "readed": true,
+        "muted": true
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Xander",
+      "status": "Online"
+    },
+    "chats": [
+      {
+        "chatId": 70,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Grace",
+        "lastMessage": "Talk to you later!",
+        "readed": false,
+        "muted": true
+      },
+      {
+        "chatId": 71,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Sam",
+        "lastMessage": "Nice to meet you!",
+        "readed": false,
+        "muted": false
+      },
+      {
+        "chatId": 72,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Jack",
+        "lastMessage": "Nice to meet you!",
+        "readed": false,
+        "muted": true
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Yara",
+      "status": "Offline"
+    },
+    "chats": [
+      {
+        "chatId": 73,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Leo",
+        "lastMessage": "Let's catch up!",
+        "readed": true,
+        "muted": false
+      },
+      {
+        "chatId": 74,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Rose",
+        "lastMessage": "Good morning!",
+        "readed": false,
+        "muted": true
+      },
+      {
+        "chatId": 75,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Tina",
+        "lastMessage": "Talk to you later!",
+        "readed": false,
+        "muted": false
+      }
+    ]
+  },
+  {
+    "userInfo": {
+      "avatar": "src/assets/icons/user-avatar.svg",
+      "name": "Zane",
+      "status": "Away"
+    },
+    "chats": [
+      {
+        "chatId": 76,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Oscar",
+        "lastMessage": "Good night!",
+        "readed": true,
+        "muted": false
+      },
+      {
+        "chatId": 77,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Kathy",
+        "lastMessage": "Nice to meet you!",
+        "readed": true,
+        "muted": false
+      },
+      {
+        "chatId": 78,
+        "chatImg": "src/assets/images/logo.png",
+        "chatName": "Grace",
+        "lastMessage": "What's new?",
+        "readed": true,
+        "muted": false
+      }
+    ]
+  }
+]
