@@ -1,9 +1,39 @@
 <script setup>
 import { computed, ref } from "vue";
 
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
 const userName = ref("");
 const userPass = ref("");
 const showPass = ref(false);
+
+const auth = getAuth();
+
+const loginByGoogle = async () => {
+  const provider = new GoogleAuthProvider();
+
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      console.log(user);
+      // IdP data available using getAdditionalUserInfo(result)
+      // ...
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.customData.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+    });
+};
 </script>
 
 <template>
@@ -33,7 +63,10 @@ const showPass = ref(false);
           />
         </button>
       </div>
-      <button class="btn register-btn">Register</button>
+      <button @click="login" class="btn register-btn">Register</button>
+      <button @click="loginByGoogle" class="btn register-btn google-btn">
+        Login By google
+      </button>
     </div>
   </div>
 </template>
@@ -116,6 +149,19 @@ const showPass = ref(false);
   width: 45px;
 }
 
-.show-pass-icon img {
+.register-btn {
+  padding: 8px 12px;
+  border-radius: 12px;
+  width: 200px;
+}
+
+.google-btn {
+  background-color: #fff;
+  border: 2px solid #000;
+  color: #000;
+  background-image: url("/src/assets/icons/google-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 5%;
+  background-size: 24px;
 }
 </style>
