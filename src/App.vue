@@ -4,39 +4,13 @@ import Input from "./components/CustomInput.vue";
 import AuthPage from "./pages/AuthPage.vue";
 import ChatPage from "./pages/ChatPage.vue";
 import ChatList from "./pages/ChatList.vue";
-
-const messages = [
-  {
-    content: "hello",
-    myMessage: false,
-  },
-  {
-    content: "hello ",
-    myMessage: true,
-  },
-  {
-    content: "what is your name",
-    myMessage: false,
-  },
-  {
-    content: "n",
-    myMessage: true,
-  },
-  {
-    content: "my name is a",
-    myMessage: false,
-  },
-];
+import BurgerMenu from "@/components/BurgerMenu.vue";
 </script>
 
 <template>
-  <!--  <AuthPage />-->
-  <!--  <ChatPage />-->
-  <h1>Hello {{ $route.fullPath }}</h1>
-  <RouterLink to="/chat/1">asd</RouterLink>
-  <main>
-    <RouterView />
-  </main>
+  <div>
+    <router-view></router-view>
+  </div>
 </template>
 
 <style>

@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, computed } from "vue";
 import Message from "../components/Message.vue";
 import Input from "../components/CustomInput.vue";
 import ChatList from "./ChatList.vue";
@@ -11,12 +11,13 @@ import {
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
 
+import { useRoute, useRouter } from "vue-router";
+const router = useRouter();
+const route = useRoute();
+
 import { ScrollArea } from "@/components/ui/scroll-area/index.js";
-import { useRoute } from "vue-router";
 
 import { getData } from "@/api/api.js";
-
-const route = useRoute();
 
 const messages = ref([]);
 const user = ref();
@@ -27,6 +28,17 @@ onMounted(async () => {
   console.log(user.value.chats);
   messages.value = await getData("/data/messages.json");
 });
+
+const search = computed({
+  get() {
+    return route.query.search ?? "";
+  },
+  set(search) {
+    router.replace({ query: { search } });
+  },
+});
+
+console.log(search);
 </script>
 
 <template>
