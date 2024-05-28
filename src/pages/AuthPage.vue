@@ -1,6 +1,9 @@
 <script setup>
 import { computed, ref } from "vue";
 import { useUserStore } from "@/stores/UserStore.js";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const userName = ref("");
 const userPass = ref("");
@@ -12,6 +15,7 @@ const loginByGoogle = async () => {
     await userStore.getUserByGoogle();
 
     console.log(userStore.user);
+    router.push("/chat/1");
   } catch (e) {
     throw e;
   }

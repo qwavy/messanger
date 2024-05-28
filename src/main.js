@@ -2,20 +2,6 @@ import { createApp } from "vue";
 import "./assets/index.css";
 import App from "./App.vue";
 
-import { createWebHistory, createRouter } from "vue-router";
-import ChatPage from "./pages/ChatPage.vue";
-import AuthPage from "@/pages/AuthPage.vue";
-
-const routes = [
-  { path: "/", component: AuthPage },
-  { path: "/chat/:id", component: ChatPage },
-];
-
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
-});
-
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
@@ -33,5 +19,6 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 import { createPinia } from "pinia";
+import { router } from "@/router/router.js";
 
 createApp(App).use(createPinia()).use(router).mount("#app");
