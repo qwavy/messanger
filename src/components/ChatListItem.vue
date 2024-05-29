@@ -90,7 +90,7 @@ watch(readedData, () => {
           Unmute
         </span>
       </ContextMenuItem>
-      <ContextMenuItem v-show="!readedData">
+      <ContextMenuItem>
         <span
           v-if="readedData"
           class="menu-item"

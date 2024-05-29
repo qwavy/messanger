@@ -3,6 +3,10 @@ import { ref, watch } from "vue";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button/index.js";
 const inputValue = ref("");
+
+const sendMessage = async () => {
+  console.log(inputValue.value);
+};
 </script>
 
 <template>

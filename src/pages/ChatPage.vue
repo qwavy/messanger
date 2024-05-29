@@ -10,12 +10,15 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
+import { ScrollArea } from "@/components/ui/scroll-area/index.js";
 
 import { useRoute, useRouter } from "vue-router";
 const router = useRouter();
 const route = useRoute();
 
-import { ScrollArea } from "@/components/ui/scroll-area/index.js";
+import { useUserStore } from "@/stores/UserStore.js";
+
+const userStore = useUserStore();
 
 import { getData } from "@/api/api.js";
 
@@ -25,20 +28,19 @@ const index = +route.params.id[0];
 onMounted(async () => {
   user.value = await getData("/data/users.json");
   user.value = user.value[index];
-  console.log(user.value.chats);
   messages.value = await getData("/data/messages.json");
 });
 
-const search = computed({
-  get() {
-    return route.query.search ?? "";
-  },
-  set(search) {
-    router.replace({ query: { search } });
-  },
-});
-
-console.log(search);
+// const search = computed({
+//   get() {
+//     return route.query.search ?? "";
+//   },
+//   set(search) {
+//     router.replace({ query: { search } });
+//   },
+// });
+//
+// console.log(search);
 </script>
 
 <template>
