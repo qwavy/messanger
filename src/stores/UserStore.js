@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import axios from "axios";
 export const useUserStore = defineStore("userStore", () => {
   const user = ref("");
 

@@ -21,26 +21,20 @@ import { useUserStore } from "@/stores/UserStore.js";
 const userStore = useUserStore();
 
 import { getData } from "@/api/api.js";
+import UserStatus from "@/components/UserStatus.vue";
 
 const messages = ref([]);
 const user = ref();
-const index = +route.params.id[0];
+const indexChat = +route.params.id[0];
 onMounted(async () => {
-  user.value = await getData("/data/users.json");
-  user.value = user.value[index];
-  messages.value = await getData("/data/messages.json");
+  if (!indexChat) {
+    user.value = true;
+  } else {
+    user.value = await getData("/data/users.json");
+    user.value = user.value[indexChat];
+    messages.value = await getData("/data/messages.json");
+  }
 });
-
-// const search = computed({
-//   get() {
-//     return route.query.search ?? "";
-//   },
-//   set(search) {
-//     router.replace({ query: { search } });
-//   },
-// });
-//
-// console.log(search);
 </script>
 
 <template>
@@ -56,7 +50,7 @@ onMounted(async () => {
         </div>
       </ResizablePanel>
       <ResizableHandle />
-      <ResizablePanel id="right-side-panel">
+      <ResizablePanel id="right-side-panel" v-if="indexChat">
         <div class="current-chat">
           <div class="current-chat-header">
             <div class="current-chat-info">
@@ -65,29 +59,15 @@ onMounted(async () => {
                 class="user-avatar"
                 alt="avatar"
               />
-              <button class="current-chat-leave-btn">
+              <RouterLink class="current-chat-leave-btn" to="/">
                 <img
                   src="../assets/icons/arrow-left.svg"
                   alt="leave from current chat button"
                 />
-              </button>
+              </RouterLink>
               <div class="user-info">
                 <h3 class="user-name">{{ user.userInfo.name }}</h3>
-                <span
-                  v-if="user.userInfo.status === 'Online'"
-                  class="user-status user-status-online"
-                  >{{ user.userInfo.status }}</span
-                >
-                <span
-                  v-else-if="user.userInfo.status === 'Busy'"
-                  class="user-status user-status-busy"
-                  >{{ user.userInfo.status }}</span
-                >
-                <span
-                  v-else-if="user.userInfo.status === 'Offline'"
-                  class="user-status user-status-offline"
-                  >{{ user.userInfo.status }}</span
-                >
+                <UserStatus :status="user.userInfo.status" />
               </div>
               <div class="current-chat-actions"></div>
             </div>
@@ -106,6 +86,7 @@ onMounted(async () => {
           </div>
         </div>
       </ResizablePanel>
+      <ResizablePanel v-else> <div class="bg"></div></ResizablePanel>
     </ResizablePanelGroup>
   </div>
 </template>
@@ -165,28 +146,7 @@ onMounted(async () => {
 .user-name {
   font-family: "Roboto Bold";
 }
-.user-status {
-  opacity: 0.6;
-}
-.user-status::before {
-  content: "ㅤ";
-  display: inline-block;
-  position: relative;
-  top: 3px;
-  right: 8px;
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
-}
-.user-status-online::before {
-  background-color: #68d391;
-}
-.user-status-busy::before {
-  background-color: #d61313;
-}
-.user-status-offline::before {
-  background-color: #c0c0c0;
-}
+
 .messages-container {
   display: flex;
   flex-direction: column;
@@ -197,6 +157,11 @@ onMounted(async () => {
 
 .current-chat-leave-btn {
   display: none;
+}
+.bg {
+  background-image: url("../assets/images/bg-image.jpg");
+  background-size: cover;
+  height: 100%;
 }
 @media (max-width: 1024px) {
   #left-side-panel {

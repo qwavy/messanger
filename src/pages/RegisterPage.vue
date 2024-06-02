@@ -4,31 +4,39 @@ import { useUserStore } from "@/stores/UserStore.js";
 import { useRouter } from "vue-router";
 import axios from "axios";
 
+import {
+  RadioGroup,
+  RadioGroupItem,
+} from "@/components/ui/radio-group/index.js";
+import { Label } from "@/components/ui/label/index.js";
+
 const userStore = useUserStore();
 
 const router = useRouter();
 
-const email = ref("");
-const userPass = ref("");
-const showPass = ref(false);
+const fullName = ref("");
+const username = ref("");
+const password = ref("");
+const confirmPassword = ref("");
+const gender = ref("");
+const showPassword = ref(false);
+const showConfirmPassword = ref(false);
+
 const token = ref();
 
 const login = async () => {
   try {
-    await userStore.login(email.value, userPass.value, token);
-    console.log(token);
+    axios
+      .post("http://localhost:5000/api/auth/signup", {
+        fullName,
+        username,
+        password,
+        confirmPassword,
+        gender,
+      })
+      .then((res) => console.log(res));
   } catch (e) {
     console.log(e.message);
-  }
-};
-
-const loginByGoogle = async () => {
-  try {
-    await userStore.getUserByGoogle();
-    console.log(userStore.user);
-    router.push("/chat/1");
-  } catch (e) {
-    throw e;
   }
 };
 </script>
@@ -39,20 +47,26 @@ const loginByGoogle = async () => {
       <img src="../assets/images/logo.png" alt="logo" class="logo" />
       <input
         class="auth-page-input input-username"
-        v-model="email"
-        placeholder="user email"
+        v-model="fullName"
+        placeholder="full name"
       />
+      <input
+        class="auth-page-input input-username"
+        v-model="username"
+        placeholder="username"
+      />
+
       <div class="input-password-container auth-page-input">
         <input
           class="input-password"
-          v-model="userPass"
+          v-model="password"
           placeholder="password"
-          :type="showPass ? 'text' : 'password'"
+          :type="showPassword ? 'text' : 'password'"
         />
-        <button class="show-pass-icon" @click="showPass = !showPass">
+        <button class="show-pass-icon" @click="showPassword = !showPassword">
           <img
             :src="
-              showPass
+              showPassword
                 ? 'src/assets/icons/show-pass.svg'
                 : 'src/assets/icons/hide-pass.svg'
             "
@@ -60,10 +74,40 @@ const loginByGoogle = async () => {
           />
         </button>
       </div>
+      <div class="input-password-container auth-page-input">
+        <input
+          class="input-password"
+          v-model="confirmPassword"
+          placeholder="confirm password"
+          :type="showConfirmPassword ? 'text' : 'password'"
+        />
+        <button
+          class="show-pass-icon"
+          @click="showConfirmPassword = !showConfirmPassword"
+        >
+          <img
+            :src="
+              showConfirmPassword
+                ? 'src/assets/icons/show-pass.svg'
+                : 'src/assets/icons/hide-pass.svg'
+            "
+            alt="show/hide pass icon"
+          />
+        </button>
+      </div>
+      <div class="gender-choice">
+        <RadioGroup default-value="male" v-model="gender">
+          <div class="flex items-center space-x-2">
+            <RadioGroupItem id="r1" value="male" />
+            <Label style="color: var(--main-purple)" for="r1">Male</Label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <RadioGroupItem id="r2" value="female" />
+            <Label style="color: var(--main-purple)" for="r2">Female</Label>
+          </div>
+        </RadioGroup>
+      </div>
       <button @click="login" class="btn register-btn">Register</button>
-      <button @click="loginByGoogle" class="btn register-btn google-btn">
-        Login By google
-      </button>
     </div>
   </div>
 </template>

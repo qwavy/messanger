@@ -54,7 +54,7 @@ watch(readedData, () => {
 <template>
   <ContextMenu>
     <ContextMenuTrigger>
-      <div class="chat-list-item">
+      <RouterLink :to="{ path: '/chat/' + chatId }" class="chat-list-item">
         <Avatar>
           <AvatarImage :src="chatImg" alt="@radix-vue" />
           <AvatarFallback>CN</AvatarFallback>
@@ -67,7 +67,7 @@ watch(readedData, () => {
           <span>{{ lastMessage }}</span>
         </div>
         <div :class="[readedClass, mutedClass]"></div>
-      </div>
+      </RouterLink>
     </ContextMenuTrigger>
     <ContextMenuContent>
       <ContextMenuItem>
